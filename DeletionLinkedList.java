@@ -1,31 +1,36 @@
-package LinkedList;
-class Node{
+// package LinkedList;
+class Node {
     int data;
     Node next;
-    Node(int data){
+
+    Node(int data) {
         this.data = data;
         this.next = null;
     }
 }
+
 public class DeletionLinkedList {
     Node head;
-    DeletionLinkedList(){
+
+    DeletionLinkedList() {
         head = null;
     }
-    public void insertAtBeginning(int data){
+
+    public void insertAtBeginning(int data) {
         Node newNode = new Node(data);
-        if(head == null){
-            head= newNode;
+        if (head == null) {
+            head = newNode;
             return;
         }
         Node temp = head;
-        while(temp.next !=null){
+        while (temp.next != null) {
             temp = temp.next;
         }
-        temp.next=newNode;
+        temp.next = newNode;
     }
-    public void deteleAtBeginning(){
-        if(head == null){
+
+    public void deteleAtBeginning() {
+        if (head == null) {
             return;
         }
         Node temp = head;
@@ -33,7 +38,7 @@ public class DeletionLinkedList {
         temp = null;
     }
 
-    public void deteleAtEnd(){
+    public void deteleAtEnd() {
         Node temp = head;
         while (temp.next.next != null) {
             temp = temp.next;
@@ -41,11 +46,11 @@ public class DeletionLinkedList {
         temp.next = null;
     }
 
-    public void print(){
+    public void print() {
         Node temp = head;
-        while(temp != null){
-            System.out.print(temp.data +" ");
-            temp =  temp.next;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
         }
         System.out.println();
     }
@@ -56,7 +61,7 @@ public class DeletionLinkedList {
         list.insertAtBeginning(20);
         list.insertAtBeginning(30);
         list.insertAtBeginning(60);
-        //list.deteleAtBeginning();
+        // list.deteleAtBeginning();
         list.deteleAtEnd();
         list.print();
     }
